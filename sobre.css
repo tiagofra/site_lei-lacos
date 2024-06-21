@@ -1,0 +1,25 @@
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px 40px;
+}
+
+.about-content p {
+  font-size: 24px;
+}
+
+body .footer-text {
+  font-size: 26px;
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+body .footer-text.last {
+  margin-top: 10px;
+}
+
+body {
+  background-color: #F7F1DE;
+}

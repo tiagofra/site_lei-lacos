@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.divExequente,
+.divExecutado {
+    display: inline-block;
+    width: 45%; /* Ajuste conforme necessário */
+    vertical-align: top;
+    margin-right: 5%; /* Espaçamento entre as divs */
+}
+
+.divStatus {
+    clear: both; /* Garante que a div de status comece em uma nova linha */
+}
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+#processDetails {
+    margin-top: 20px;
+}
+
+.exequente, .executado {
+    display: inline-block;
+    width: calc(50% - 10px);
+    vertical-align: top;
+}
+
+.exequente {
+    margin-right: 20px;
+}
+
+p {
+    margin: 5px 0;
+}
+
+strong {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+/* Estilos específicos para o status */
+.status-aberto {
+    color: green;
+}
+
+.status-fechado {
+    color: red;
+}
+
+.status-arquivado {
+    color: blue;
+}

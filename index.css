@@ -1,0 +1,39 @@
+.index-content {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  height: calc(100vh - 70px);
+}
+
+.index-content .right-content {
+  background-color: 773322;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+}
+
+.index-content .right-content img {
+  width: 450px;
+  border-radius: 44%;
+}
+
+.index-content .right-content h2 {
+  color: white;
+}
+
+.index-content .left-content {
+  background-color: #F7F1DE;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+}
+
+.index-content .left-content p {
+  font-size: 32px;
+  margin: 0;
+}
+
+.index-content .left-content h1 {
+  font-size: 48px;
+}

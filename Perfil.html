@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="Perfil.css">
+  <title>Lei & Laços Online</title>
+  <style>
+    .login-title {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div>
+      <a href="index.html" class="active">Início</a>
+    </div>
+    <div>
+      <a href="servicos.html">Serviços</a>
+    </div>
+    <div>
+      <a href="sobre.html">Sobre Nós</a>
+    </div>
+    <div>
+      <a href="Perfil.html">Perfil</a>
+    </div>
+  </div>
+  <div class="login-container">
+    <form id="loginForm">
+      <h2 class="login-title">Login:</h2>
+      <div class="login-input">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" placeholder="Email" required>
+      </div>
+      <div class="login-input">
+        <label for="password">Senha:</label>
+        <input type="password" name="password" id="password" placeholder="Senha" required>
+      </div>
+      <div class="login-input">
+        <input type="submit" value="Entrar">
+      </div>
+    </form>
+    <div>
+      <a href="cadastro.html">Cadastrar</a>
+    </div>
+    <div>
+      <a href="esqueci_senha.html">Esqueci a senha</a>
+    </div>
+  </div>
+  <div class="services-content">
+    <div class="left-content">
+      <style>
+        .no-underline {
+          text-decoration: none;
+        }
+      </style>
+      <a href="Perfil.css" class="no-underline">
+      </a>
+    </div>
+    <div class="right-content">
+      <!-- Conteúdo aqui -->
+    </div>
+  </div>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault(); 
+
+      const users = [
+        { email: 'joseazeredo@oab.com.br', password: '123456' },
+        { email: 'anaoliveira@oab.com.br', password: '654321' },
+        { email: 'mariasilva@oab.com.br', password: 'abcdef' }
+      ];
+
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      const user = users.find(user => user.email === email && user.password === password);
+
+      if (user) {
+        window.location.href = 'cadastroProcessos.html';
+      } else {
+        alert('Email ou senha incorretos.');
+      }
+    });
+  </script>
+</body>
+</html>

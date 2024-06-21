@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="servicos.css">
+    <title>Lei & Laços Online</title>
+  </head>
+  <body>
+    <div class="header">
+      <div>
+        <a href="index.html" class="active">Início</a>
+      </div>
+      <div>
+        <a href="servicos.html">Serviços</a>
+      </div>
+      <div>
+        <a href="sobre.html">Sobre Nós</a>
+      </div>
+      <div>
+        <a href="Perfil.html">Perfil</a>
+      </div>
+    </div>
+    
+    <div class="services-content">
+        
+      <div class="left-content">
+        
+        <h3>
+          Consultar Processos
+        </h3>
+      </div>
+      <script>
+        function searchProcess() {
+          var cpf = document.getElementById("cpfInput").value;
+          fetch('http://127.0.0.1:8000/api/processos/?cpfExecutado=' + cpf + '&cpfExequente=' + cpf)
+            .then(response => response.json())
+            .then(data => {
+              var processesFound = document.getElementById("processesFound");
+              processesFound.innerHTML = ""; // Limpa os resultados anteriores
+              
+              var filteredProcesses = data.filter(process => process.cpfExecutado === cpf || process.cpfExequente === cpf);
+              
+            //   if (filteredProcesses.length === 0) {
+            if (filteredProcesses.length > 0) {
+              
+            processesFound.innerHTML += "<h3>Processos encontrados:</h3>";
+            filteredProcesses.forEach(process => {
+              var processHtml = `
+                <div class="process">
+                  <h4>${process.nomeExequente} X ${process.nomeExecutado}</h4>
+                  <span>Local: ${process.local}</span>
+                  <button onclick="viewProcess(${process.id})">Ver processo</button>
+                </div>
+                `;
+              processesFound.innerHTML += processHtml;
+            });
+              } else {
+                processesFound.innerHTML += "<p>Nenhum CPF encontrado.</p>";
+              }})
+            .catch(error => {
+              console.error('Erro ao buscar processos:', error);
+            });
+        }
+  
+        function viewProcess(processId) {
+        window.location.href = 'process_details.html?processId=' + processId;
+        //   console.log('Visualizar processo com ID:', processId);
+        }
+      </script>
+  
+      <div class="right-content">
+        <div class="search">
+          <p>Consultar por CPF:</p>
+          <input id="cpfInput" type="text" placeholder="Digite o CPF">
+          <button onclick="searchProcess()">Pesquisar</button>
+        </div>
+        <div 
+        id="processesFound" class="processes-found"></div>
+      </div>
+    </div>
+
+  </body>
+</html>

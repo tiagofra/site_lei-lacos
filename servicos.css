@@ -1,0 +1,74 @@
+.services-content {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  height: calc(100vh - 70px);
+}
+
+.services-content .left-content {
+  background-color: #773322;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0;
+}
+
+.services-content .left-content h3 {
+  color: white;
+}
+
+.services-content .right-content {
+  background-color: wheat;
+  padding: 30px 80px;
+}
+
+.services-content .right-content .search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.services-content .right-content .search button {
+  background-color: rgb(97, 174, 97);
+  border-radius: 20px;
+  width: 100px;
+  padding: 5px;
+  border: none;
+  margin-top: 12px;
+  font-size: 15px;
+}
+
+.services-content .right-content .search input {
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: 15px;
+  border: none;
+  font-size: 16px;
+  background-color: rgb(230, 230, 230);
+}
+
+.services-content .process {
+  background-color: rgb(182, 182, 182);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 700px;
+}
+
+.services-content .process h4 {
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.services-content .process button {
+  align-self: flex-end;
+  border-radius: 2px;
+  border: 1px solid rgb(141, 141, 141);
+}
+
+.right-content .processes-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

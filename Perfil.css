@@ -1,0 +1,160 @@
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px 40px;
+}
+
+.about-content p {
+  font-size: 24px;
+}
+
+body .footer-text {
+  font-size: 26px;
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+body .footer-text.last {
+  margin-top: 10px;
+}
+
+body {
+  background-color: #F7F1DE;
+}
+.login-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.login-title {
+  font-size: 24px;
+  color: #333; /* ou a cor que você preferir */
+  margin-bottom: 10px;
+}
+
+
+.login-input {
+  margin-bottom: 10px; /* Adiciona um espaço entre os inputs */
+}
+.login-input label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.login-input input[type="email"],
+.login-input input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #D9D9D9;
+  border-radius: 20px; /* Adicionando bordas arredondadas */
+  box-sizing: border-box;
+}
+
+.login-input input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: #4CAF50;
+  cursor: pointer;
+}
+
+.login-input input[type="email"],
+.login-input input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #D9D9D9;
+  border-radius: 20px;
+  box-sizing: border-box;
+  background-color: #D9D9D9; /* Definindo a cor de fundo */
+}
+
+.login-input input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: #D9D9D9;
+  color: white;
+  cursor: pointer;
+}
+
+.login-input input[type="submit"]:hover {
+  background-color: #45a049;
+}
+.login-input input[type="email"],
+.login-input input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #D9D9D9;
+  border-radius: 5px; /* Adicionando bordas arredondadas */
+  box-sizing: border-box;
+  border-style: solid; 
+}
+
+.login-input input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: #D9D9D9;
+  color: white;
+  cursor: pointer;
+}
+.login-input input[type="email"],
+.login-input input[type="password"] {
+  width: 600px; 
+  height: 10px; 
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #D9D9D9;
+  border-radius: 5px;
+  box-sizing: border-box;
+  border-style: solid;
+}
+
+.login-input input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: #D9D9D9;
+  color: white;
+  cursor: pointer;
+}
+.login-input input[type="submit"] {
+  width: 150px; 
+  padding: 10px;
+  border: none;
+  border-radius: 20px; 
+  background-color: #D9D9D9;
+  color: white;
+  cursor: pointer;
+}
+.login-input input[type="submit"] {
+  width: 150px;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: #D9D9D9;
+  color: white;
+  cursor: pointer;
+  margin: 0 auto; 
+  display: block; 
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,74 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <link rel="stylesheet" href="process_details.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Detalhes do Processo</title>
+    </head>
+    <body>
+        <div id="processDetails"></div>
+
+
+        <script>
+            function getProcessDetails() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const processId = urlParams.get('processId');
+                fetch(`http://127.0.0.1:8000/api/processos/`)
+                .then(response => response.json())
+                .then(data => {
+                    const process = data.find(process => process.id == processId);
+                    if (process) {
+                        const processDetails = document.getElementById('processDetails');
+                        processDetails.innerHTML = `
+                        <h1>${process.descricaoCaso}</h1>
+                        <div class="divProcesso">
+                        <div class="divExequente">
+                            <p><strong>Nome Exequente:</strong> ${process.nomeExequente}</p>
+                            <p><strong>CPF Exequente:</strong> ${process.cpfExequente}</p>
+                            <p><strong>Advogado Exequente:</strong> ${process.advogadoExequente}</p>
+                            <p><strong>OAB Advogado Exequente:</strong> ${process.oabAdvExequente}</p>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="divExecutado">
+                            <p><strong>Nome Executado:</strong> ${process.nomeExecutado}</p>
+                            <p><strong>CPF Executado:</strong> ${process.cpfExecutado}</p>
+                            <p><strong>Advogado Executado:</strong> ${process.advogadoExecutado}</p>
+                            <p><strong>OAB Advogado Executado:</strong> ${process.oabAdvExecutado}</p>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="divStatus">
+                            <p><strong>Poder Judiciário:</strong> ${process.poderJudiciario}</p>
+                            <p><strong>Natureza do processo:</strong> ${process.natureza}</p>
+                            <p><strong>Local:</strong> ${process.local}</p> 
+                        </div>
+                    </div>
+                        `;
+                            if (process.status === 'aberto') {
+                            processDetails.innerHTML += '<p><strong>Status:</strong> Em aberto</p>';
+                            } 
+                            else if (process.status === 'fechado') {
+                            processDetails.innerHTML += '<p><strong>Status:</strong> Encerrado</p>';
+                            } 
+                            else if (process.status === 'arquivado') {
+                            processDetails.innerHTML += '<p><strong>Status:</strong> Arquivado</p>';
+                        }
+
+                    } else {
+                        // Se não encontrado, exibir uma mensagem de erro
+                        const processDetails = document.getElementById('processDetails');
+                        processDetails.innerHTML = "<p>Processo não encontrado.</p>";
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro ao buscar detalhes do processo:', error);
+                });
+            }
+
+            getProcessDetails();
+        </script>
+    </body>
+    </html>
